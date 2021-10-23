@@ -1,1 +1,29 @@
-<h1>Hello World</h1>
+<main class="wrapper">
+    <div class="comments-container">
+        <div class="comments-container--header">
+            <div class="comments-container--title">
+                {{> comment-icon}} <h4>{{comments.length}} Comments</h4>
+            </div>
+            <div class="comments-container--sorting">
+                <span class="comments-sort-text">Sort</span>
+                <button class="comments-sort-btn">Likes</button>
+            </div>
+        </div>
+        {{log comments.length}}
+
+        <ul>
+            {{#each comments}}
+            <li class="comment">
+                <div class="comment-title">
+                    <h3 class="comment-username">{{this.name}}</h3>
+                    <span class="comment-likes">{{this.likes}} Likes</span>
+                </div>
+                <p class="comment-text">{{this.body}}
+                </p>
+                <span class="comment-likes-mobile">{{this.likes}} Likes</span>
+            </li>
+            {{/each}}
+        </ul>
+
+    </div>
+</main>
